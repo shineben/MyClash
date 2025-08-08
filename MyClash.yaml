@@ -1,13 +1,7 @@
 # NAME: MyClash
 # AUTHOR: ben
 # REPO: https://github.com/shineben/MyClash
-# UPDATED: 2025-06-06 09:16:55
-# DOMAIN: 6
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 20
-# IP-CIDR: 2
-# PROCESS-NAME: 1
-# TOTAL: 30
+# UPDATED: 2025.08.08
 payload:
   - DOMAIN-SUFFIX,jiashule.com
   - DOMAIN-SUFFIX,linux.do

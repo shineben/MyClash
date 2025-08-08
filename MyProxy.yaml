@@ -1,0 +1,7 @@
+# NAME: MyProxy
+# AUTHOR: ben
+# REPO: https://github.com/shineben/MyProxy
+# UPDATED: 2025.08.08
+payload:
+  - DOMAIN-SUFFIX,kn007.net
+  - DOMAIN-SUFFIX,ipshu.com

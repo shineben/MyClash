@@ -496,6 +496,12 @@ const ruleProviders = {
     "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub_No_Resolve.yaml",
     "path": "./ruleset/Github.yaml"
   },
+  "gfw": {
+    ...ruleProviderCommon,
+    "behavior": "domain",
+    "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt",
+    "path": "./ruleset/gfw.yaml"
+  },
   "MyClash": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -530,5 +536,6 @@ const rules = [
   "RULE-SET,Emby,Emby",
   "RULE-SET,Steam,Steam",
   "RULE-SET,Github,Github",
+  "RULE-SET,gfw,Proxy",
   "MATCH,漏网之鱼"
 ];

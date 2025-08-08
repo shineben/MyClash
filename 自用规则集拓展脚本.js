@@ -117,7 +117,7 @@ const proxyGroupConfig = [
     ...groupBaseOption,
     "name": "Apple",
     "type": "select",
-    "proxies": ["Proxy", "DIRECT", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
+    "proxies": ["DIRECT", "Proxy", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
     "include-all": true,
     "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
     "icon": "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png"
@@ -144,7 +144,7 @@ const proxyGroupConfig = [
     ...groupBaseOption,
     "name": "BiliBili",
     "type": "select",
-    "proxies": ["Proxy", "DIRECT", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
+    "proxies": ["DIRECT", "Proxy", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
     "include-all": true,
     "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
     "icon": "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png"
@@ -225,7 +225,7 @@ const proxyGroupConfig = [
     ...groupBaseOption,
     "name": "OneDrive",
     "type": "select",
-    "proxies": ["Proxy", "DIRECT", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
+    "proxies": ["DIRECT", "Proxy", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
     "include-all": true,
     "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
     "icon": "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/OneDrive.png"
@@ -234,7 +234,7 @@ const proxyGroupConfig = [
     ...groupBaseOption,
     "name": "Microsoft",
     "type": "select",
-    "proxies": ["Proxy", "DIRECT", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
+    "proxies": ["DIRECT", "Proxy", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
     "include-all": true,
     "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
     "icon": "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png"

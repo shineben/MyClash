@@ -1,0 +1,51 @@
+# NAME: MyClash
+# AUTHOR: ben
+# REPO: https://github.com/shineben/MyClash
+# UPDATED: 2025-06-06 09:16:55
+# DOMAIN: 6
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 20
+# IP-CIDR: 2
+# PROCESS-NAME: 1
+# TOTAL: 30
+payload:
+  'DOMAIN-SUFFIX,yunaq.com,DIRECT',
+  'DOMAIN-SUFFIX,jiashule.com,DIRECT',
+  'DOMAIN-SUFFIX,linux.do,DIRECT',
+  'DOMAIN-SUFFIX,deepseek.com,DIRECT',
+  'DOMAIN-SUFFIX,volces.com,DIRECT',
+  'DOMAIN-SUFFIX,portal101.cn,DIRECT',
+  'DOMAIN-SUFFIX,ephone.ai,DIRECT',
+  'DOMAIN-SUFFIX,pcbeta.com,DIRECT',
+  "DOMAIN-SUFFIX,steamzg.com,DIRECT",
+  "DOMAIN-SUFFIX,mangacopy.com,DIRECT",
+  "DOMAIN-SUFFIX,mangafuna.xyz,DIRECT",
+  "DOMAIN-SUFFIX,gying.org,DIRECT",
+  "DOMAIN-SUFFIX,m-team.cc,DIRECT",
+  "DOMAIN-SUFFIX,66ha0.cc,DIRECT",
+  "DOMAIN-SUFFIX,66tutup.com,DIRECT",
+  "DOMAIN-SUFFIX,hdkylin.com,DIRECT",
+  // 将本网站分流到自动选择(前提是你的代理组当中有"自动选择")
+  //"DOMAIN-SUFFIX,ip138.com, 自动选择",
+  //"DOMAIN-SUFFIX,ipshu.com, 自动选择",
+  "DOMAIN-SUFFIX,outlook.com,DIRECT",
+  "DOMAIN-SUFFIX,onedrive.com,DIRECT",
+  "DOMAIN-SUFFIX,onenote.com,DIRECT",
+  "DOMAIN-SUFFIX,live.com,DIRECT",
+  "DOMAIN-SUFFIX,xboxservices.com,DIRECT",
+  "DOMAIN-SUFFIX,423down.com,DIRECT",
+  "DOMAIN-SUFFIX,mxdm.fans,DIRECT",
+  "DOMAIN-SUFFIX,mxdm.tv,DIRECT",
+  "DOMAIN-SUFFIX,hdkyl.in,DIRECT",
+  "DOMAIN-SUFFIX,6v520.net,DIRECT",
+  "DOMAIN-SUFFIX,hdkylin.work,DIRECT",
+  "DOMAIN-SUFFIX,flysheep6.com,DIRECT",
+  "DOMAIN-SUFFIX,linux.do,DIRECT",
+  "DOMAIN-SUFFIX,zmpt.cc,DIRECT",
+  "DOMAIN-SUFFIX,321n.net,DIRECT",
+  "DOMAIN-SUFFIX,171285543.xyz,DIRECT",
+  "DOMAIN-SUFFIX,copy20.com,DIRECT",
+  "DOMAIN-SUFFIX,baozimhcn.com,DIRECT",
+  "DOMAIN-SUFFIX,txquu.com,DIRECT",
+  "DOMAIN-SUFFIX,m-team.cc,DIRECT",
+  "DOMAIN-SUFFIX,m-team.io,DIRECT",

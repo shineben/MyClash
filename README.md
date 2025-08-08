@@ -4,7 +4,7 @@
 * MyClash.yaml，请使用 behavior: "classical"。
 * 自动更新周期默认为1440小时
 * 已经适配于所有Clash内核的软件
-* 如需其他规则集 [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule)
+* 如需其他规则集 [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule),[Loyalsoldier](https://github.com/Loyalsoldier/clash-rules)
 * 原始地址:https://raw.githubusercontent.com/shineben/MyClash/refs/heads/main/MyClash.yaml
 * 加速地址,请注意缓存:https://cdn.jsdelivr.net/gh/shineben/MyClash@main/MyClash.yaml
 ### 优秀规则集脚本

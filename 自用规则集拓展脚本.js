@@ -261,7 +261,7 @@ const proxyGroupConfig = [
     ...groupBaseOption,
     "name": "Steam",
     "type": "select",
-    "proxies": ["Proxy", "DIRECT", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
+    "proxies": ["DIRECT", "Proxy", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
     "include-all": true,
     "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
     "icon": "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Steam.png"
@@ -274,6 +274,15 @@ const proxyGroupConfig = [
     "include-all": true,
     "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
     "icon": "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Github.png"
+  },
+  {
+    ...groupBaseOption,
+    "name": "漏网之鱼",
+    "type": "select",
+    "proxies": ["DIRECT", "Proxy", "REJECT", "香港", "台湾", "日本", "韩国", "美国", "德国", "新加坡", "法国", "英国", "其他"],
+    "include-all": true,
+    "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置",
+    "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg"
   },
   {
     ...groupBaseOption,
@@ -521,5 +530,5 @@ const rules = [
   "RULE-SET,Emby,Emby",
   "RULE-SET,Steam,Steam",
   "RULE-SET,Github,Github",
-  "MATCH,Proxy"
+  "MATCH,漏网之鱼"
 ];

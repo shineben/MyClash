@@ -502,11 +502,17 @@ const ruleProviders = {
     "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt",
     "path": "./ruleset/gfw.yaml"
   },
-  "MyClash": {
+  "MyDirect": {
     ...ruleProviderCommon,
     "behavior": "classical",
-    "url": "https://raw.githubusercontent.com/shineben/MyClash/refs/heads/main/MyClash.yaml",
-    "path": "./ruleset/MyClash.yaml"
+    "url": "https://raw.githubusercontent.com/shineben/MyClash/refs/heads/main/MyDirect.yaml",
+    "path": "./ruleset/MyDirect.yaml"
+  },
+   "MyProxy": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://raw.githubusercontent.com/shineben/MyClash/refs/heads/main/MyProxy.yaml",
+    "path": "./ruleset/MyProxy.yaml"
   },
 };
 
@@ -516,8 +522,8 @@ const rules = [
   'GEOIP,private,DIRECT',
   'GEOIP,CN,DIRECT',
 
-
-  "RULE-SET,MyClash,DIRECT",
+  "RULE-SET,MyDirect,DIRECT",
+  "RULE-SET,MyProxy,Proxy",
   "RULE-SET,Apple,Apple",
   "RULE-SET,Telegram,Telegram",
   "RULE-SET,YouTube,YouTube",
@@ -537,5 +543,6 @@ const rules = [
   "RULE-SET,Steam,Steam",
   "RULE-SET,Github,Github",
   "RULE-SET,gfw,Proxy",
+  
   "MATCH,漏网之鱼"
 ];

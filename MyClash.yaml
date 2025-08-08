@@ -9,7 +9,6 @@
 # PROCESS-NAME: 1
 # TOTAL: 30
 payload:
-  - DOMAIN-SUFFIX,yunaq.com
   - DOMAIN-SUFFIX,jiashule.com
   - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,deepseek.com

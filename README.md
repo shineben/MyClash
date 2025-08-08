@@ -1,8 +1,8 @@
 # MyClash
-## 用于自己的域名过滤
+## FlClash
 ### 使用说明
 * MyClash.yaml，请使用 behavior: "classical"。
-* Op和Fl自动更新周期为1440小时
+* 自动更新周期默认为1440小时
 * 已经适配于所有Clash内核的软件
 * 如需其他规则集 [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule)
 * 原始地址:https://raw.githubusercontent.com/shineben/MyClash/refs/heads/main/MyClash.yaml
@@ -10,3 +10,9 @@
 ### 优秀规则集脚本
 * [wanswu](https://github.com/wanswu/my-backup)
 * https://linux.do/t/topic/520112
+## OpenClash
+### 使用说明
+* 自动更新周期默认为1440小时
+1. 规则附加-自定义规则集附加-ALL-规则集类型:http-规则格式:yaml-规则类型-classical-地址:上面-应用
+2. 通过控制面板-规则-更新
+3. 配置管理-规则集文件列表-查看

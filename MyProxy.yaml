@@ -1,7 +1,7 @@
 # NAME: MyProxy
 # AUTHOR: ben
 # REPO: https://github.com/shineben/MyProxy
-# UPDATED: 2025.08.08
+# UPDATED: 2025年8月10日16:41:37
 # 注释
 # DOMAIN-SUFFIX 匹配域名后缀 例：google.com匹配www.google.com/mail.google.com和google.com,但不匹配content-google.com
 # DOMAIN        匹配完整域名

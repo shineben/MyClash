@@ -499,6 +499,7 @@ const rules = [
   "GEOSITE,google,🔍 Google",
   "GEOSITE,googlefcm,🔍 Google",
   "GEOSITE,bilibili,📺 BiliBili",
+  "DOMAIN-KEYWORD,copilot,🤖 OpenAI",
   "GEOSITE,openai,🤖 OpenAI",
   "GEOSITE,tiktok,🎵 TikTok",
   "GEOSITE,spotify,🎧 Spotify",
@@ -532,3 +533,4 @@ const rules = [
   // --- 8. 兜底规则 ---
   "MATCH,🐟 漏网之鱼"
 ];
+

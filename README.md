@@ -18,3 +18,4 @@
 1. 规则附加-自定义规则集附加-ALL-规则集类型:http-规则格式:yaml-规则类型-classical-地址:上面-应用
 2. 通过控制面板-规则-更新
 3. 配置管理-规则集文件列表-查看
+* 订阅地址转换:[Custom_OpenClash_Rules](https://github.com/Aethersailor/Custom_OpenClash_Rules)

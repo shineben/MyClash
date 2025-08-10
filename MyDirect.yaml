@@ -2,6 +2,32 @@
 # AUTHOR: ben
 # REPO: https://github.com/shineben/MyClash
 # UPDATED: 2025.08.08
+# 注释
+# DOMAIN-SUFFIX 匹配域名后缀 例：google.com匹配www.google.com/mail.google.com和google.com,但不匹配content-google.com
+# DOMAIN        匹配完整域名
+# DOMAIN-KEYWORD匹配域名关键字
+# IP-CIDR      匹配IP地址或IP段
+# IP-CIDR6     匹配IPv6地址或IP段
+# PROCESS-NAME 匹配进程名称
+# PROCESS-NAME-REGEX 匹配进程名称正则表达式
+# IP-ASN       匹配IP地址ASN
+# IP-ASN6      匹配IPv6地址ASN
+# IP-ASN-REGEX 匹配IP地址ASN正则表达式
+# IP-ASN6-REGEX 匹配IPv6地址ASN正则表达式
+# GEOIP       匹配国家或地区
+# GEOIP6      匹配国家或地区IPv6
+# GEOIP-CIDR  匹配国家或地区IP段
+# GEOIP-CIDR6 匹配国家或地区IPv6段
+# GEOIP-COUNTRY 匹配国家
+# GEOIP-COUNTRY6 匹配国家IPv6
+# GEOIP-ASN   匹配国家或地区ASN
+# GEOIP-ASN6  匹配国家或地区IPv6 ASN
+# GEOIP-ASN-REGEX 匹配国家或地区ASN正则表达式
+# GEOIP-ASN6-REGEX 匹配国家或地区IPv6 ASN正则表达式
+# GEOIP-COUNTRY-REGEX 匹配国家正则表达式
+# GEOIP-COUNTRY6-REGEX 匹配国家IPv6正则表达式
+# GEOIP-ASN-REGEX 匹配ASN正则表达式
+# GEOIP-ASN6-REGEX 匹配IPv6 ASN正则表达式
 payload:
   - DOMAIN-SUFFIX,jiashule.com
   - DOMAIN-SUFFIX,linux.do
@@ -17,7 +43,7 @@ payload:
   - DOMAIN-SUFFIX,m-team.cc
   - DOMAIN-SUFFIX,66ha0.cc
   - DOMAIN-SUFFIX,66tutup.com
-  - DOMAIN-SUFFIX,hdkylin.com 
+  - DOMAIN-SUFFIX,hdkylin.com
   - DOMAIN-SUFFIX,outlook.com
   - DOMAIN-SUFFIX,onedrive.com
   - DOMAIN-SUFFIX,onenote.com

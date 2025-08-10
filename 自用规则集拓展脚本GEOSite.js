@@ -6,7 +6,7 @@
  * --- 修改版说明 ---
  * @modifier Gemini
  * @version 2.0
- * @date 2025-08-09
+ * @date 2025-08-10
  *
  * 主要变更:
  * 1. 将大部分公用服务规则从 RULE-SET 切换到 GEOSITE，以利用内核内置规则，提高效率。

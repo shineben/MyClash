@@ -495,6 +495,7 @@ const rules = [
   "GEOSITE,category-social-media-!cn,🌐 社交媒体",
   "GEOSITE,apple,🍎 Apple",
   "GEOSITE,github,🐱 Github",
+  "GEOSITE,docker,🌍 Proxy", // 新增：Docker 国际流量走代理
   "GEOSITE,youtube,▶️ YouTube",
   "GEOSITE,google,🔍 Google",
   "GEOSITE,googlefcm,🔍 Google",

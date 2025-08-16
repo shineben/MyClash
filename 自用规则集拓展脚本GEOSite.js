@@ -118,7 +118,7 @@ const groupBaseOption = {
 // 统一代理名称列表
 const mainProxyList = ["🌍 Proxy", "🎯 DIRECT", "🚫 REJECT", "🇭🇰 香港总汇", "🇹🇼 台湾总汇", "🇯🇵 日本总汇", "🇰🇷 韩国总汇", "🇺🇸 美国总汇", "🇩🇪 德国总汇", "🇸🇬 新加坡总汇", "🇫🇷 法国总汇", "🇬🇧 英国总汇", "🌐 其他总汇"];
 const directProxyList = ["🎯 DIRECT", "🌍 Proxy", "🚫 REJECT", "🇭🇰 香港总汇", "🇹🇼 台湾总汇", "🇯🇵 日本总汇", "🇰🇷 韩国总汇", "🇺🇸 美国总汇", "🇩🇪 德国总汇", "🇸🇬 新加坡总汇", "🇫🇷 法国总汇", "🇬🇧 英国总汇", "🌐 其他总汇"];
-const defaultExcludeFilter = "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|限速|限量|限时|限流|限额|限制|永久|免费";
+const defaultExcludeFilter = "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|限速|限量|限时|限流|限额|限制|永久|免费|官|卡";
 const proxyGroupConfig = [
   // --- 核心策略组 ---
   {

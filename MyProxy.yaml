@@ -35,4 +35,4 @@ payload:
   - DOMAIN-SUFFIX,v1.mk
   - DOMAIN-KEYWORD,hdhive
   - DOMAIN,emby.as174.de
-  - DOMAIN,media.micu.hk
+  - DOMAIN-SUFFIX,micu.hk

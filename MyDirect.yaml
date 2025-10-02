@@ -37,7 +37,7 @@ payload:
   - DOMAIN-SUFFIX,ephone.ai
   - DOMAIN-SUFFIX,pcbeta.com
   - DOMAIN-SUFFIX,steamzg.com
-  - DOMAIN-SUFFIX,mangacopy.com
+  #- DOMAIN-SUFFIX,mangacopy.com
   - DOMAIN-SUFFIX,mangafuna.xyz
   - DOMAIN-SUFFIX,gying.org
   - DOMAIN-SUFFIX,m-team.cc
@@ -60,7 +60,7 @@ payload:
   - DOMAIN-SUFFIX,zmpt.cc
   - DOMAIN-SUFFIX,321n.net
   - DOMAIN-SUFFIX,171285543.xyz
-  - DOMAIN-SUFFIX,copy20.com
+  #- DOMAIN-SUFFIX,copy20.com
   - DOMAIN-SUFFIX,baozimhcn.com
   - DOMAIN-SUFFIX,txquu.com
   - DOMAIN-SUFFIX,m-team.cc

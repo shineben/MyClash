@@ -35,9 +35,9 @@ payload:
   - DOMAIN-SUFFIX,v1.mk
   - DOMAIN-KEYWORD,hdhive
   - DOMAIN,emby.as174.de
-  - DOMAIN,coomer.st
-  - DOMAIN,onlyfans.com
-  - DOMAIN,2025copy.com
-  - DOMAIN,mangacopy.com
+  - DOMAIN-SUFFIX,coomer.st
+  - DOMAIN-SUFFIX,onlyfans.com
+  - DOMAIN-SUFFIX,2025copy.com
+  - DOMAIN-SUFFIX,mangacopy.com
   
  # - DOMAIN,media.micu.hk

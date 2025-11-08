@@ -30,7 +30,6 @@
 # GEOIP-ASN6-REGEX 匹配IPv6 ASN正则表达式
 payload:
   - DOMAIN-SUFFIX,jiashule.com
-  - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,deepseek.com
   - DOMAIN-SUFFIX,volces.com
   - DOMAIN-SUFFIX,portal101.cn

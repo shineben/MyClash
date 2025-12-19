@@ -42,3 +42,4 @@ payload:
   - DOMAIN-SUFFIX,micu.hk
   - DOMAIN,v3.micu.hk
   - DOMAIN-SUFFIX,linux.do
+  - PROCESS-NAME,Antigravity.exe

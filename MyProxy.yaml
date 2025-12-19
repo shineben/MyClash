@@ -42,4 +42,10 @@ payload:
   - DOMAIN-SUFFIX,micu.hk
   - DOMAIN,v3.micu.hk
   - DOMAIN-SUFFIX,linux.do
-  - PROCESS-NAME-REGEX,(?i)Antigravity
+  - DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
+  - DOMAIN,googleapis.com
+  - DOMAIN,www.googleapis.com
+  - DOMAIN,play.googleapis.com
+  - DOMAIN,oauth2.googleapis.com
+  - DOMAIN,antigravity-unleash.goog
+  - DOMAIN,lh3.googleusercontent.com

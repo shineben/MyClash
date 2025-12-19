@@ -66,3 +66,4 @@ payload:
   - DOMAIN-SUFFIX,jsdelivr.net
   - DOMAIN-SUFFIX,easytier.cn
   - PROCESS-NAME-REGEX,(?i)yuanbao
+  - PROCESS-NAME-REGEX,(?i)Code

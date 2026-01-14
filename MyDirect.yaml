@@ -67,3 +67,4 @@ payload:
   - DOMAIN-SUFFIX,easytier.cn
   - PROCESS-NAME-REGEX,(?i)yuanbao
   - PROCESS-NAME-REGEX,(?i)Code
+  - DOMAIN-SUFFIX,lwgod.tv

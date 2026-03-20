@@ -43,3 +43,5 @@ payload:
   - DOMAIN,v3.micu.hk
   - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,deefun.com
+  - DOMAIN-SUFFIX,dopus.com
+  - DOMAIN-SUFFIX,gpsoft.com

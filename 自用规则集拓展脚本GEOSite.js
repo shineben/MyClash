@@ -471,6 +471,7 @@ const ruleProviders = {
 const rules = [
   // --- 1. 私有/自定义高优先级规则 ---
   "RULE-SET,MyDirect,🎯 DIRECT",
+  "DOMAIN-SUFFIX,linux.do,🇸🇬 新加坡总汇",
   "RULE-SET,MyProxy,🌍 Proxy",
 
   // --- 2. 本地/私有IP直连 ---

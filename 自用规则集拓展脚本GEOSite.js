@@ -139,6 +139,14 @@ const proxyGroupConfig = [
   // --- 分流策略组 ---
   {
     ...groupBaseOption,
+    "name": "🐟 漏网之鱼",
+    "type": "select",
+    "proxies": directProxyList,
+    "include-all": true,
+    "exclude-filter": defaultExcludeFilter,
+  },
+  {
+    ...groupBaseOption,
     "name": "🍎 Apple",
     "type": "select",
     "proxies": directProxyList,
@@ -302,14 +310,6 @@ const proxyGroupConfig = [
     "name": "🛒 国外电商",
     "type": "select",
     "proxies": mainProxyList,
-    "include-all": true,
-    "exclude-filter": defaultExcludeFilter,
-  },
-  {
-    ...groupBaseOption,
-    "name": "🐟 漏网之鱼",
-    "type": "select",
-    "proxies": directProxyList,
     "include-all": true,
     "exclude-filter": defaultExcludeFilter,
   },

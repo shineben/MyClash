@@ -1,0 +1,413 @@
+#适配openclash,flcash等 Meta 或 Premium 内核
+mixed-port: 7890
+allow-lan: true
+bind-address: 0.0.0.0
+ipv6: false
+unified-delay: true
+log-level: warning
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:53
+  prefer-h3: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - localhost.work.weixin.qq.com
+  use-hosts: false
+  use-system-hosts: false
+  default-nameserver:
+    - tls://223.5.5.5
+    - tls://119.29.29.29
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+  direct-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+
+proxy-providers:
+  mj: #同步mj.yaml更改
+    type: http # 订阅类型：从 HTTP URL 获取节点
+    url: https://XXXXXXX # 订阅链接
+    interval: 86400 # 自动更新间隔：86400 秒 = 24 小时
+    path: ./proxy-providers/mj.yaml # 本地缓存路径
+    health-check: # 健康检查配置
+      enable: true # 启用节点健康检查
+      interval: 300 # 检查间隔：300 秒 = 5 分钟
+      url: https://www.gstatic.com/generate_204 # 测速 URL
+    override: # 节点覆写配置
+      additional-prefix: "MJ|" # 为所有节点名称添加前缀 "MJ|"，用于区分不同机场
+
+rule-providers:
+  MyDirect:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/shineben/MyClash/main/MyDirect.yaml
+    path: ./ruleset/MyDirect.yaml
+    proxy: 🌍 Proxy
+
+  MyProxy:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://raw.githubusercontent.com/shineben/MyClash/main/MyProxy.yaml
+    path: ./ruleset/MyProxy.yaml
+    proxy: 🌍 Proxy
+
+  gfw:
+    type: http
+    format: text
+    interval: 86400
+    behavior: domain
+    url: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
+    path: ./ruleset/gfw.txt
+    proxy: 🌍 Proxy
+
+  Emby:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Emby/Emby.yaml
+    path: ./ruleset/Emby.yaml
+    proxy: 🌍 Proxy
+
+proxy-groups:
+  - name: 🌍 Proxy
+    type: select
+    include-all: true
+    proxies:
+      - 🔄 AUTO
+      - 🎯 DIRECT
+      - 🚫 REJECT
+      - 🇭🇰 香港
+      - 🇹🇼 台湾
+      - 🇯🇵 日本
+      - 🇰🇷 韩国
+      - 🇺🇸 美国
+      - 🇩🇪 德国
+      - 🇸🇬 新加坡
+      - 🇫🇷 法国
+      - 🇬🇧 英国
+      - 🌐 其他
+
+  - name: 🔄 AUTO
+    type: url-test
+    include-all: true
+    tolerance: 50
+    exclude-filter: "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|限速|限量|限时|限流|限额|限制|永久|免费|官|卡"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🐟 漏网之鱼
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 DIRECT
+      - 🌍 Proxy
+
+  - name: 🍎 Apple
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 DIRECT
+      - 🌍 Proxy
+
+  - name: 💬 即时通讯
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: ▶️ YouTube
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 📺 BiliBili
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 DIRECT
+      - 🌍 Proxy
+
+  - name: 🤖 OpenAI
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🎵 TikTok
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🎧 Spotify
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🎬 Netflix
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🏰 Disney
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🔍 Google
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: ☁️ OneDrive
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 DIRECT
+      - 🌍 Proxy
+
+  - name: 🪟 Microsoft
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 DIRECT
+      - 🌍 Proxy
+
+  - name: 🐦 Twitter
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🎞️ Emby
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🎮 Steam
+    type: select
+    include-all: true
+    proxies:
+      - 🎯 DIRECT
+      - 🌍 Proxy
+
+  - name: 🐱 Github
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🌐 社交媒体
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 📺 Bahamut
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🎮 游戏平台
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🌎 国外媒体
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🛒 国外电商
+    type: select
+    include-all: true
+    proxies:
+      - 🌍 Proxy
+      - 🎯 DIRECT
+
+  - name: 🇭🇰 香港
+    type: url-test
+    include-all: true
+    filter: "(?i)🇭🇰|香港|港|HK|hongkong|hong kong"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇹🇼 台湾
+    type: url-test
+    include-all: true
+    filter: "(?i)🇹🇼|台湾|台|TW|taiwan|taipei"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇯🇵 日本
+    type: url-test
+    include-all: true
+    filter: "(?i)🇯🇵|日本|JP|japan|tokyo|osaka"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇰🇷 韩国
+    type: url-test
+    include-all: true
+    filter: "(?i)🇰🇷|韩国|韩|KR|korea|seoul"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇺🇸 美国
+    type: url-test
+    include-all: true
+    filter: "(?i)🇺🇸|美国|美|US|united states|america|los angeles|san jose|silicon valley"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇩🇪 德国
+    type: url-test
+    include-all: true
+    filter: "(?i)🇩🇪|德国|德|DE|germany|frankfurt"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇸🇬 新加坡
+    type: url-test
+    include-all: true
+    filter: "(?i)🇸🇬|新加坡|新|SG|singapore"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇫🇷 法国
+    type: url-test
+    include-all: true
+    filter: "(?i)🇫🇷|法国|法|FR|france|paris"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇬🇧 英国
+    type: url-test
+    include-all: true
+    filter: "(?i)🇬🇧|英国|英|UK|united kingdom|london"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🌐 其他
+    type: url-test
+    include-all: true
+    filter: "(?i)^(?!.*(港|台|日|韩|美|德|新|法|英|HK|TW|JP|KR|US|DE|SG|FR|UK|Hong|Taiwan|Japan|Korea|America|Germany|Singapore|France|Britain)).*"
+    tolerance: 50
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🎯 DIRECT
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: 🚫 REJECT
+    type: select
+    proxies:
+      - REJECT
+
+rules:
+  - RULE-SET,MyDirect,🎯 DIRECT
+  - RULE-SET,MyProxy,🌍 Proxy
+
+  - IP-CIDR,192.168.0.0/16,🎯 DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,🎯 DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,🎯 DIRECT,no-resolve
+  - GEOSITE,private,🎯 DIRECT
+  - GEOIP,private,🎯 DIRECT,no-resolve
+
+  - GEOSITE,google-cn,🎯 DIRECT
+  - GEOSITE,category-games@cn,🎯 DIRECT
+  - GEOSITE,category-game-platforms-download,🎯 DIRECT
+  - GEOSITE,category-public-tracker,🎯 DIRECT
+
+  - GEOSITE,category-communication,💬 即时通讯
+  - GEOSITE,category-social-media-!cn,🌐 社交媒体
+  - GEOSITE,apple,🍎 Apple
+  - GEOSITE,github,🐱 Github
+  - GEOSITE,docker,🌍 Proxy
+  - GEOSITE,youtube,▶️ YouTube
+  - GEOSITE,google,🔍 Google
+  - GEOSITE,googlefcm,🔍 Google
+  - GEOSITE,bilibili,📺 BiliBili
+  - DOMAIN-KEYWORD,copilot,🤖 OpenAI
+  - GEOSITE,openai,🤖 OpenAI
+  - GEOSITE,tiktok,🎵 TikTok
+  - GEOSITE,spotify,🎧 Spotify
+  - GEOSITE,bahamut,📺 Bahamut
+  - GEOSITE,netflix,🎬 Netflix
+  - GEOSITE,disney,🏰 Disney
+  - GEOSITE,onedrive,☁️ OneDrive
+  - GEOSITE,microsoft,🪟 Microsoft
+  - GEOSITE,twitter,🐦 Twitter
+  - GEOSITE,steam,🎮 Steam
+  - GEOSITE,category-games,🎮 游戏平台
+  - GEOSITE,category-entertainment,🌎 国外媒体
+  - GEOSITE,category-ecommerce,🛒 国外电商
+  - RULE-SET,Emby,🎞️ Emby
+
+  - GEOSITE,gfw,🌍 Proxy
+  - RULE-SET,gfw,🌍 Proxy
+
+  - GEOIP,telegram,💬 即时通讯,no-resolve
+  - GEOIP,twitter,🌐 社交媒体,no-resolve
+  - GEOIP,facebook,🌐 社交媒体,no-resolve
+  - GEOIP,google,🔍 Google,no-resolve
+  - GEOIP,netflix,🎬 Netflix,no-resolve
+
+  - GEOSITE,cn,🎯 DIRECT
+  - GEOIP,CN,🎯 DIRECT,no-resolve
+
+  - MATCH,🐟 漏网之鱼

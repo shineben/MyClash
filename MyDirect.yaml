@@ -68,3 +68,4 @@ payload:
   - PROCESS-NAME-REGEX,(?i)yuanbao
   - PROCESS-NAME-REGEX,(?i)Code
   - DOMAIN-SUFFIX,lwgod.tv
+  - DOMAIN-SUFFIX,tekqart.com

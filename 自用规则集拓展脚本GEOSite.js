@@ -5,13 +5,18 @@
  *
  * --- 修改版说明 ---
  * @modifier Gemini
- * @version 2.0
- * @date 2025-08-10
+ * @version 2.1
+ * @date 2026.10.19
  *
  * 主要变更:
  * 1. 将大部分公用服务规则从 RULE-SET 切换到 GEOSITE，以利用内核内置规则，提高效率。
  * 2. 保留 MyDirect、MyProxy 和 gfw 作为 RULE-SET，用于自定义和补充。
  * 3. 添加了完整的中文注释，便于理解和后续维护。
+ *
+ * --- 2.1 修改 ---
+ * 4. 移除「🎞️ Emby」策略组，同时删除其 rule-provider 与对应规则（Emby 流量回归常规分流）。
+ * 5. 新增「🧠 Claude」策略组，并加入 GEOSITE,anthropic 及 claude.ai / anthropic.com 分流规则。
+ * 6. 将 🔍 Google、▶️ YouTube、🤖 OpenAI 三个策略组前置到「🐟 漏网之鱼」之后，便于切换。
  */
 
 // =============================== 1. 订阅配置 ===============================
@@ -118,7 +123,7 @@ const groupBaseOption = {
 // 统一代理名称列表
 const mainProxyList = ["🌍 Proxy", "🎯 DIRECT", "🚫 REJECT", "🇭🇰 香港总汇", "🇹🇼 台湾总汇", "🇯🇵 日本总汇", "🇰🇷 韩国总汇", "🇺🇸 美国总汇", "🇩🇪 德国总汇", "🇸🇬 新加坡总汇", "🇫🇷 法国总汇", "🇬🇧 英国总汇", "🌐 其他总汇"];
 const directProxyList = ["🎯 DIRECT", "🌍 Proxy", "🚫 REJECT", "🇭🇰 香港总汇", "🇹🇼 台湾总汇", "🇯🇵 日本总汇", "🇰🇷 韩国总汇", "🇺🇸 美国总汇", "🇩🇪 德国总汇", "🇸🇬 新加坡总汇", "🇫🇷 法国总汇", "🇬🇧 英国总汇", "🌐 其他总汇"];
-const defaultExcludeFilter = "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|限速|限量|限时|限流|限额|限制|永久|免费|官|卡";
+const defaultExcludeFilter = "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|限速|限量|限时|限流|限额|限制|永久|免费";
 const proxyGroupConfig = [
   // --- 核心策略组 ---
   {
@@ -145,6 +150,40 @@ const proxyGroupConfig = [
     "include-all": true,
     "exclude-filter": defaultExcludeFilter,
   },
+  // --- 三大主力策略组（前置，便于切换）---
+  {
+    ...groupBaseOption,
+    "name": "🔍 Google",
+    "type": "select",
+    "proxies": mainProxyList,
+    "include-all": true,
+    "exclude-filter": defaultExcludeFilter,
+  },
+  {
+    ...groupBaseOption,
+    "name": "▶️ YouTube",
+    "type": "select",
+    "proxies": mainProxyList,
+    "include-all": true,
+    "exclude-filter": defaultExcludeFilter,
+  },
+  {
+    ...groupBaseOption,
+    "name": "🤖 OpenAI",
+    "type": "select",
+    "proxies": mainProxyList,
+    "include-all": true,
+    "exclude-filter": defaultExcludeFilter,
+  },
+  // --- Claude 策略组 ---
+  {
+    ...groupBaseOption,
+    "name": "🧠 Claude",
+    "type": "select",
+    "proxies": mainProxyList,
+    "include-all": true,
+    "exclude-filter": defaultExcludeFilter,
+  },
   {
     ...groupBaseOption,
     "name": "🍎 Apple",
@@ -163,25 +202,9 @@ const proxyGroupConfig = [
   },
   {
     ...groupBaseOption,
-    "name": "▶️ YouTube",
-    "type": "select",
-    "proxies": mainProxyList,
-    "include-all": true,
-    "exclude-filter": defaultExcludeFilter,
-  },
-  {
-    ...groupBaseOption,
     "name": "📺 BiliBili",
     "type": "select",
     "proxies": directProxyList,
-    "include-all": true,
-    "exclude-filter": defaultExcludeFilter,
-  },
-  {
-    ...groupBaseOption,
-    "name": "🤖 OpenAI",
-    "type": "select",
-    "proxies": mainProxyList,
     "include-all": true,
     "exclude-filter": defaultExcludeFilter,
   },
@@ -219,14 +242,6 @@ const proxyGroupConfig = [
   },
   {
     ...groupBaseOption,
-    "name": "🔍 Google",
-    "type": "select",
-    "proxies": mainProxyList,
-    "include-all": true,
-    "exclude-filter": defaultExcludeFilter,
-  },
-  {
-    ...groupBaseOption,
     "name": "☁️ OneDrive",
     "type": "select",
     "proxies": directProxyList,
@@ -244,14 +259,6 @@ const proxyGroupConfig = [
   {
     ...groupBaseOption,
     "name": "🐦 Twitter",
-    "type": "select",
-    "proxies": mainProxyList,
-    "include-all": true,
-    "exclude-filter": defaultExcludeFilter,
-  },
-  {
-    ...groupBaseOption,
-    "name": "🎞️ Emby",
     "type": "select",
     "proxies": mainProxyList,
     "include-all": true,
@@ -449,13 +456,6 @@ const ruleProviders = {
     "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt",
     "path": "./ruleset/gfw.yaml"
   },
-  // 修复：为 Emby 保留规则集
-  "Emby": {
-    ...ruleProviderCommon,
-    "behavior": "classical",
-    "url": "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Emby/Emby.yaml",
-    "path": "./ruleset/Emby.yaml"
-  },
 };
 
 // =============================== 6. 规则 (Rules) 配置 (已修改) ===============================
@@ -470,6 +470,7 @@ const ruleProviders = {
 
 const rules = [
   // --- 1. 私有/自定义高优先级规则 ---
+  "PROCESS-NAME,Antigravity.exe,🇺🇸 美国总汇",
   "RULE-SET,MyDirect,🎯 DIRECT",
   //"DOMAIN-SUFFIX,linux.do,🇸🇬 新加坡总汇",
   "RULE-SET,MyProxy,🌍 Proxy",
@@ -504,6 +505,9 @@ const rules = [
   "GEOSITE,bilibili,📺 BiliBili",
   "DOMAIN-KEYWORD,copilot,🤖 OpenAI",
   "GEOSITE,openai,🤖 OpenAI",
+  "GEOSITE,anthropic,🧠 Claude",
+  "DOMAIN-SUFFIX,claude.ai,🧠 Claude",
+  "DOMAIN-SUFFIX,anthropic.com,🧠 Claude",
   "GEOSITE,tiktok,🎵 TikTok",
   "GEOSITE,spotify,🎧 Spotify",
   "GEOSITE,bahamut,📺 Bahamut",
@@ -516,7 +520,6 @@ const rules = [
   "GEOSITE,category-games,🎮 游戏平台",
   "GEOSITE,category-entertainment,🌎 国外媒体",
   "GEOSITE,category-ecommerce,🛒 国外电商",
-  "RULE-SET,Emby,🎞️ Emby",
 
   // --- 5. 境外流量补充规则 ---
   "GEOSITE,gfw,🌍 Proxy",

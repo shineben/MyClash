@@ -69,3 +69,5 @@ payload:
   - PROCESS-NAME-REGEX,(?i)Code
   - DOMAIN-SUFFIX,lwgod.tv
   - DOMAIN-SUFFIX,tekqart.com
+  - DOMAIN-SUFFIX,commandcode.ai
+  - DOMAIN-SUFFIX,opencode.ai
